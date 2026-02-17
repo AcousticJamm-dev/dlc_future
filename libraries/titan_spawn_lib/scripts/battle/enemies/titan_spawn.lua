@@ -211,6 +211,22 @@ function TitanSpawn:onAct(battler, name)
             cutscene:wait(function() return hashealed == true end)
         end)
         return
+    elseif name == "J-Strike" then
+        battler:setAnimation("act")
+        Game.battle:startCutscene(function(cutscene)
+			if not Game:getFlag("ever_j_striked") then
+				Game:setFlag("ever_j_striked", true)
+				cutscene:text("* Wait,[wait:5] what do you want me to do here?", "nervous_left", "jamm")
+				cutscene:text("* I dunno,[wait:5] Jamm![wait:10]\n* Something!", "angry_down", "susie")
+				cutscene:text("* Anything to get these things away from us!", "angry_down", "susie")
+				cutscene:text("* ...", "concentrate", "jamm")
+				cutscene:text("* I got an idea.", "powerful", "jamm")
+			end
+			Game.battle.jamm_can_strike = true
+            cutscene:text("* Jamm prepares to STRIKE...")
+			Game.battle:finishAction()
+		end)
+        return
     elseif name == "Banish" or name == "Semi-Banish" then
         battler:setAnimation("act")
         Game.battle:startCutscene(function(cutscene)

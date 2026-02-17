@@ -2,13 +2,17 @@
 ---@overload fun(...) : TitanSpawnOverworld
 local TitanSpawnOverworld, super = Class(Sprite)
 
-function TitanSpawnOverworld:init(x, y, layer)
+function TitanSpawnOverworld:init(x, y, layer, flip)
     super.init(self, "battle/bullets/titan/default/shrink", x, y)
 
 	self:setScale(2)
 	self:setOrigin(0.5)
 	self:setFrame(6)
 	self:setLayer(layer or WORLD_LAYERS["below_ui"])
+	
+	if flip ~= nil then
+		self.flip_x = flip
+	end
 
 	self.fakeframe = 6
 	self.alpha = 0

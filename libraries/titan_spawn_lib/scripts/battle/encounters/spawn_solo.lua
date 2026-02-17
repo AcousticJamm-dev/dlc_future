@@ -68,6 +68,10 @@ function TitanSpawn:onBattleStart(battler)
         Game.battle:registerXAction("susie", "Brighten", "Powerup\nlight", 4)
         Game.battle:registerXAction("susie", "Semi-Banish", "Defeat one\nenemy", 64)
     end
+	
+	if Game:getPartyMember("jamm"):checkArmor("flowerbrace") then
+        Game.battle:registerXAction("jamm", "J-Strike", "Strike\nbullets", 2)
+	end
 end
 
 return TitanSpawn
