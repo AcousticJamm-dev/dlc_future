@@ -65,6 +65,11 @@ function character:init()
 	self.flags = {}
 	
 	self.future = true
+
+    self.element = {
+        "FLOWER",
+        "DT" -- Determination
+    }
 end
 
 function character:getLevel() return self.love end

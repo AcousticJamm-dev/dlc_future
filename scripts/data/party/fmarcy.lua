@@ -63,6 +63,11 @@ function character:init()
     self.menu_icon_offset = nil
 	
 	self.future = true
+
+    self.element = {
+        "FIRE",
+        "DARK"
+    }
 end
 
 function character:getLevel() return self.love end
