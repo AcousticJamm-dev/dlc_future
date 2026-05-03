@@ -77,6 +77,8 @@ function character:init()
     }
 	
 	self.future = true
+
+    self.element = "ICE"
 end
 
 function character:getLevel() return self.love end

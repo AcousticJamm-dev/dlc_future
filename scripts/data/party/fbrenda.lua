@@ -75,6 +75,11 @@ function character:init()
     }
 	
 	self.future = true
+
+    self.element = {
+        "HOLY",
+        "FIRE"
+    }
 end
 
 function character:getLevel() return self.love end

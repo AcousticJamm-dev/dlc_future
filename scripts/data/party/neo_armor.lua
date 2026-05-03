@@ -42,6 +42,10 @@ function character:init()
     self.menu_icon_offset = nil
 	
 	self.future = true	-- temporary
+
+    self.element = {
+        "PUPPET"
+    }
 end
 
 function character:onTurnStart(battler)
