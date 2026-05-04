@@ -545,10 +545,87 @@ return {
 			cutscene:text("* Freeze them in a Frostcrypt![wait:10]\n* Hurry!", "mad", "fmarcy")
 		end
 		cutscene:hideNametag()
-    end,
-	
-	wip = function(cutscene, event)
-		cutscene:text("* flashback not finish :(")
+		
+		local continue_var = false
+		
+		local fc = FrostcryptController(knight.x, knight.y - knight.height/2 - 50, function()
+			knight.sprite.frozen = true
+			knight.sprite.freeze_progress = 1
+			knight.sprite.aetrail = false
+			continue_var = true
+		end)
+		
+		Game.world:addChild(fc)
+		fc:setLayer(knight.layer + 1)
+		
+		cutscene:wait(function() return continue_var end)
+		
+		cutscene:wait(1)
+		cutscene:hideNametag()
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* ...", "closed", "fmarcy")
+		cutscene:text("* We finally...", "closed", "fmarcy")
+		cutscene:text("* We finally did it.", "neutral", "fmarcy")
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, 320, 300, 4, "right"))
+		
+		if Game:getFlag("future_variable") == "ceroba" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* The war isn't over yet,[wait:5] you know...", "unimpressed", "fkanako")
+		end
+		cutscene:showNametag("Marcy")
+		cutscene:text("* True,[wait:5] but it is a massive turning point.", "neutral", "fmarcy")
+		cutscene:text("* You two should feel proud.[wait:10]\n* I know I am.", "closed", "fmarcy")
+		
+		cutscene:look(fmarcy, "up")
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Now,[wait:5] about this rift...", "neutral", "fmarcy")
+		cutscene:hideNametag()
+		
+		cutscene:panTo(320, 200, 2)
+		cutscene:walkTo(fnoelle, 240, 300, 2, "up")
+		cutscene:wait(cutscene:walkTo(fvariant, 380, 300, 2, "up"))
+		
+		cutscene:showNametag("Noelle")
+		cutscene:text("* Now that it's open,[wait:5] what should we do about it?", "normal/awkward", "fnoelle")
+		if Game:getFlag("future_variable") == "ceroba" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* We can't just leave it here unguarded,[wait:5] can we?", "eyes_left", "fkanako")
+		end
+		cutscene:showNametag("Marcy")
+		cutscene:text("* One of us will have to stay behind...", "closed", "fmarcy")
+		cutscene:text("* I'll do it.[wait:10]\n* You two,[wait:5] go and make the report.", "neutral", "fmarcy")
+		cutscene:text("* I will wait for your return,[wait:5] alright?", "neutral", "fmarcy")
+		cutscene:showNametag("Noelle")
+		cutscene:text("* ...Are you sure,[wait:5] Marcy?", "normal/neutral", "fnoelle")
+		cutscene:text("* We can always call them and let them know.", "normal/smile", "fnoelle")
+		if Game:getFlag("future_variable") == "ceroba" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Aren't the phone lines still down,[wait:5] Noelle?", "eyes_left", "fkanako")
+		end
+		cutscene:showNametag("Noelle")
+		cutscene:text("* O-oh,[wait:5] right...", "normal/oh", "fnoelle")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* I'll be fine,[wait:5] you two.", "closed", "fmarcy")
+		if Game:getFlag("future_variable") == "ceroba" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Then we'll be back as soon as we can!", "neutral", "fkanako")
+		end
+		cutscene:hideNametag()
+		cutscene:walkToSpeed(fnoelle, 240, 640, 6)
+		cutscene:wait(cutscene:walkToSpeed(fvariant, 380, 640, 6))
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* ...*sigh*", "closed", "fmarcy")
+		
+		fmarcy:setAnimation("hold_look")
+		
+		cutscene:text("* Maybe this pen will see what's on the other side...", "closed", "fmarcy")
+		cutscene:text("* Who knows?[wait:10]\n* Maybe it could find my father...", "tears_closed", "fmarcy")
+		cutscene:hideNametag()
 		cutscene:gotoCutscene("hometown.end_flashback")
     end,
 }

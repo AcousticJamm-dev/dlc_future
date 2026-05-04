@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 17,
-  nextobjectid = 18,
+  nextobjectid = 19,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -293,6 +293,21 @@ return {
           properties = {
             ["text1"] = "* Pure darkness...",
             ["text2"] = "* Instinctively,[wait:5] you look at your hand in front of the lake.[wait:10]\n* You can't see your hand."
+          }
+        },
+        {
+          id = 18,
+          name = "rift_transition",
+          type = "",
+          shape = "point",
+          x = 720,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "cliffs_2"
           }
         }
       }

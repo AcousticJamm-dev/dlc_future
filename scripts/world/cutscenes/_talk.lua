@@ -40,7 +40,7 @@ return {
         else
             if map == "cliffs_1" then
                 cutscene:showNametag("Susie")
-                cutscene:text("* This place reminds me of the one where I first met Lancer.", "nervous", "susie")
+                cutscene:text("* This place reminds me of where I first met Lancer.", "nervous", "susie")
                 cutscene:text("* He ambushed me and Kris there.", "smile", "susie")
                 cutscene:text("* ...[wait:5] hopefully the same won't happen here.", "nervous_side", "susie")
                 cutscene:hideNametag()
@@ -114,26 +114,50 @@ return {
                 cutscene:text("* I have a bad feeling about what's coming up...", "nervous_left", "jamm")
                 cutscene:hideNametag()
             elseif map == "chase_4" and Game.party[1]:hasSpell("rage") then
+                cutscene:showNametag("Jamm")
+                cutscene:text("* Did you...[wait:10]\n* Really mean all that?", "relief", "jamm")
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+                cutscene:text("* ...", "annoyed_down_alt", "susie")
+                cutscene:text("* Yeah,[wait:5] but I dunno why I got so...", "annoyed_down_smile", "susie")
+                cutscene:showNametag("Jamm")
+                cutscene:text("* ...Enraged?", "nervous", "jamm")
+                cutscene:showNametag("Susie")
+                cutscene:text("* ...", "annoyed_down", "susie")
+                if Game:getFlag("future_variable") == "ceroba" then
+                    cutscene:showNametag("Ceroba")
+			        cutscene:text("* This situation is really getting to us.", "muttering", "ceroba")
+			        cutscene:text("* If we need to,[wait:5] we could take a break.", "unsure", "ceroba")
+					cutscene:showNametag("Jamm")
+					cutscene:text("* That might be for the best.", "worried", "jamm")
+		        end
                 cutscene:hideNametag()
             elseif map == "cliffs_10" then
+				cutscene:showNametag("Jamm")
+				cutscene:text("* ...", "worried_down", "jamm")
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+                cutscene:text("* You okay,[wait:5] dude?", "nervous", "susie")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* H-huh?[wait:10] Oh,[wait:5] well...", "worried", "jamm")
+				cutscene:text("* It just occured to me how powerful my daughter here is.", "worried_down", "jamm")
+                cutscene:showNametag("Susie")
+                cutscene:text("* Hell yeah![wait:10]\n* You have a badass daughter,[wait:5] dude!", "sincere_smile", "susie")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Well,[wait:5] okay,[wait:5] but...", "nervous", "jamm")
+				cutscene:text("* It brought me back to that...[wait:10] THING,[wait:5] that we fought.", "nervous_left", "jamm")
+				cutscene:text("* How strong it really was and all...", "nervous", "jamm")
+				cutscene:text("* If Marcy is that powerful,[wait:5] then is that really the status quo?", "worried", "jamm")
+                cutscene:showNametag("Susie")
+                cutscene:text("*", "surprise", "susie")
+                if Game:getFlag("future_variable") == "ceroba" then
+                    cutscene:showNametag("Ceroba")
+			        cutscene:text("* That is quite thought-provoking...", "pensive", "ceroba")
+		        end
                 cutscene:hideNametag()
-            elseif map == "main_hub" then
+            elseif map == "main_hub" or map == "hub_prefountain" or map == "hub_fountain" then
                 cutscene:showNametag("Susie")
                 cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
                 cutscene:hideNametag()
             elseif map == "hub_marketplace" then
-                cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
-                cutscene:hideNametag()
-            elseif map == "hub_prefountain" then
-                cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
-                cutscene:hideNametag()
-            elseif map == "hub_fountain" then
                 cutscene:showNametag("Susie")
                 cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
                 cutscene:hideNametag()

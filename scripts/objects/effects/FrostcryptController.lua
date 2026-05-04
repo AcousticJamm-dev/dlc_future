@@ -17,7 +17,7 @@ function FrostcryptContoller:init(x, y, callback)
 	self.snowflake_big.layer = self.snowflake_big.layer + 1
 	self:addChild(self.snowflake_big)
 	self.snowflake_big:fadeTo(1, 0.5)
-	Game.battle.timer:tween(1.5, self.snowflake_big, {scale_x = 2.5, scale_y = 2.5})
+	Game.stage.timer:tween(1.5, self.snowflake_big, {scale_x = 2.5, scale_y = 2.5})
 
 	Assets.playSound("titan_absorb", 1.5, 0.8)
 end
@@ -40,14 +40,14 @@ function FrostcryptContoller:snowflake(x, y)
 	snowflake.alpha = 0
 	snowflake.rotation = math.rad(MathUtils.random(360))
 	self:addChild(snowflake)
-	Game.battle.timer:tween(1, snowflake, {scale_x = 1, scale_y = 1, alpha = 1, rotation = (snowflake.rotation + math.rad(180)), x = 0, y = 0})
-	Game.battle.timer:after(1, function() snowflake:remove() end)
+	Game.stage.timer:tween(1, snowflake, {scale_x = 1, scale_y = 1, alpha = 1, rotation = (snowflake.rotation + math.rad(180)), x = 0, y = 0})
+	Game.stage.timer:after(1, function() snowflake:remove() end)
 end
 
 function FrostcryptContoller:onExplosion()
 	self.explosion_happened = true
 	self.snowflake_big:flash()
-	Game.battle.timer:tween(0.5, self.snowflake_big, {scale_x = 0, scale_y = 0, alpha = 0, rotation = (self.snowflake_big.rotation + math.rad(180))})
+	Game.stage.timer:tween(0.5, self.snowflake_big, {scale_x = 0, scale_y = 0, alpha = 0, rotation = (self.snowflake_big.rotation + math.rad(180))})
 	Assets.playSound("scytheburst")
 	Assets.playSound("frostdamage")
 	local snowflakes_total = 8

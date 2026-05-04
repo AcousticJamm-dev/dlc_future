@@ -10,6 +10,10 @@ function Mod:init()
 		vs_susie = 0.7,
 		wind = 0.7,
     })
+	
+	Game:registerEvent("rift_transition", function(data)
+        return RiftTransition(data.x, data.y, data.properties)
+    end)
 end
 
 function Mod:postInit(new_file)
