@@ -434,7 +434,7 @@ return {
 		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* You three fight for a noble cause.", "neutral", "ceroba")
-			cutscene:text("* Defending the world,[wait:5] even when it all feels bleak...", "default", "ceroba")
+			cutscene:text("* Defending the world,[wait:5] even when it all feels bleak...", "dissapproving", "ceroba")
 			cutscene:text("* It reminds me of...", "sorrowful", "ceroba")
 			cutscene:look(variant, "right")
 			cutscene:showNametag("Kanako")
@@ -887,7 +887,7 @@ return {
 				
 				if Game:getFlag("future_variable") == "ceroba" then
 					cutscene:showNametag("Ceroba")
-					cutscene:text("* Did you learn the ability?", "default", "ceroba")
+					cutscene:text("* Did you learn the ability?", "neutral", "ceroba")
 				end
 				cutscene:showNametag("Jamm")
 				cutscene:text("* Yeah,[wait:5] I did!", "smirk", "jamm")

@@ -33,13 +33,13 @@ function ElevatorDoor:onInteract()
 				if not Game:getFlag("future_bin_checked") then
 					if Game:getFlag("future_variable") == "ceroba" then
 						cutscene:showNametag("Ceroba")
-						cutscene:text("* And we still haven't checked the bin,[wait:5] either...", "default", "ceroba")
+						cutscene:text("* And we still haven't checked the bin,[wait:5] either...", "closed_eyes", "ceroba")
 					end
 				end
 			elseif not Game:getFlag("future_bin_checked") then
 				if Game:getFlag("future_variable") == "ceroba" then
 					cutscene:showNametag("Ceroba")
-					cutscene:text("* The only thing left to check is the bin.", "default", "ceroba")
+					cutscene:text("* The only thing left to check is the bin.", "neutral", "ceroba")
 				end
 			else
 				Game:setFlag("future_exhausted_all_options", true)

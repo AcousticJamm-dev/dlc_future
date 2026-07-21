@@ -182,7 +182,7 @@ return {
                 cutscene:text("* ...You think any of these shops still have their stuff?", "nervous_side", "susie")
 				if Game:getFlag("future_variable") == "ceroba" then
 					cutscene:showNametag("Ceroba")
-					cutscene:text("* I wouldn't count on it...", "default", "ceroba")
+					cutscene:text("* I wouldn't count on it...", "closed_eyes", "ceroba")
 				end
 				cutscene:showNametag("Jamm")
 				cutscene:text("* Well,[wait:5] sure,[wait:5] but this place is abandoned.", "neutral", "jamm")

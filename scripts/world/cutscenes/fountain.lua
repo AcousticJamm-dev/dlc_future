@@ -16,7 +16,7 @@ return function(cutscene)
 		if not Game:getFlag("future_bin_checked") then
 			if Game:getFlag("future_variable") == "ceroba" then
 				cutscene:showNametag("Ceroba")
-				cutscene:text("* Well,[wait:5] we haven't checked the bin yet,[wait:5] right?", "default", "ceroba")
+				cutscene:text("* Well,[wait:5] we haven't checked the bin yet,[wait:5] right?", "smile", "ceroba")
 			end
 			if not Game:getFlag("future_elevator_checked") then
 				cutscene:showNametag("Jamm")

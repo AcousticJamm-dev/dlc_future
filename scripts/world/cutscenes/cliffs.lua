@@ -549,8 +549,8 @@ return {
 		cutscene:look(jamm, "left")
 		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* ...It's the best we've got.", "default", "ceroba")
-			cutscene:text("* So then how would we get home?", "default", "ceroba")
+			cutscene:text("* ...It's the best we've got.", "dissapproving", "ceroba")
+			cutscene:text("* So then,[wait:5] how would we get home?", "neutral", "ceroba")
 		elseif Game:getFlag("future_variable") == "brenda" then
 			cutscene:showNametag("Brenda")
 			cutscene:text("* That's cool and all,[wait:5] but uh...", "dissapointed", "brenda")
@@ -1553,7 +1553,7 @@ return {
 		
 		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* Or maybe the warp bin.", "default", "ceroba")
+			cutscene:text("* Or maybe the warp bin.", "alt", "ceroba")
 		end
 		
 		cutscene:showNametag("Susie")

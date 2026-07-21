@@ -72,7 +72,7 @@ return function(cutscene)
 	    cutscene:text("* It...[wait:10] looks like a torture device...", "nervous_side", "susie")
 		cutscene:text("* It...[wait:10] it must be!", "speechless", "jamm")
 		if Game:getFlag("future_variable") == "ceroba" then
-			cutscene:text("* Perhaps removing it would help us?", "default", "ceroba")
+			cutscene:text("* Perhaps removing it would help us?", "surprised", "ceroba")
 		end
 		cutscene:text("* It's the best we've got...", "nervous", "jamm")
 	end

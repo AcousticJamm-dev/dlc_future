@@ -382,7 +382,7 @@ local hub = {
 		
 		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* ...The Collapse?", "default", "ceroba")
+			cutscene:text("* ...The Collapse?", "surprised", "ceroba")
 		end
 		
 		cutscene:showNametag("Marcy")
