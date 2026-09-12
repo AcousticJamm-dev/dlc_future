@@ -29,7 +29,7 @@ function PartyBattler:criticalCure(playsound)
 	if playsound == nil or playsound then
         Assets.stopAndPlaySound("power")
     end
-	self:statusMessage("msg", "down", nil, nil, 1)
+	self:statusMessage("msg", "down", COLORS.red, nil, 1)
     self.chara:setHealth(MathUtils.round(((-self.chara:getStat("health")) / 2)))
     self.criticond = false
     self.overlay_sprite:setAnimation("battle/down")
@@ -62,7 +62,7 @@ function PartyBattler:fakeSwoon()
         Game.battle:removeAction(Game.battle:getPartyIndex(self.chara.id), true)
     end
 	self.chara.health = -999
-	self:statusMessage("msg", "swoon", nil, true)
+	self:statusMessage("msg", "swoon", COLORS.red, true)
 	Game.battle:shakeCamera(8)
 end
 
