@@ -144,7 +144,7 @@ return {
 		
 		Assets.playSound("t_down", 0.35)
 		
-		Game.world:addChild(DamageNumber("msg", "down", fvariant.x + 20, fvariant.y - 50))
+		Game.world:addChild(DamageNumber("msg", "down", fvariant.x + 20, fvariant.y - 50, COLORS.red))
 		
 		cutscene:slideTo(fvariant, fvariant.x, fvariant.y + 200, 0.2)
 		
